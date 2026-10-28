@@ -599,11 +599,12 @@ exports.forgetPasswordController = async (req, res) => {
     });
 
   } catch (err) {
-    console.log("error in forge password controller : ", err.message);
+    console.log("error in forget password controller : ", err.message);
     res.status(500).json({
       success: false,
       message: "Internal server error",
     });
   }
 };
+
 
