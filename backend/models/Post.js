@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema(
   {
-    titel: {
-      type: String,
-      require: [true, "titel for the post is required"],
-    },
     description: {
       type: String,
       require: [true, "description for the post is required"],
@@ -14,16 +10,10 @@ const postSchema = new mongoose.Schema(
       type: String,
       require: [true, "image for the post is required"],
     },
-    techStack: [
-      {
-        type: String,
-        require: [true, "mention tech stack for the project"],
-      },
-    ],
-    category: {
-      type: String,
-      require: [true, "Enter the category of the project"],
-    },
+    links  : [{
+      type : String,
+      default : [],
+    }],
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
